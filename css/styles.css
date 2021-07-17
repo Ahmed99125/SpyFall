@@ -118,12 +118,12 @@ form {
 }
 
 @media screen and (max-width: 420px) {
-  .card-game {
-    height:100vw;
-  }
-
   .card {
     height: 120vw;
+  }
+
+  .card-game {
+    height:100vw;
   }
 
   .card-game span {
