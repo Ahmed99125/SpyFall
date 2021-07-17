@@ -134,7 +134,7 @@ form {
   } 
 }
 
-@media screen and (max-height: 370px) {
+@media screen and (max-height: 455px) {
   .container {
     justify-content: flex-start;
   }
