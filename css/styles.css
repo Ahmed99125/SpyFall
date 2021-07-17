@@ -27,7 +27,7 @@ html, body {
   display: flex;
   flex-direction: column;
   width: 70%;
-  height: 70%;
+  height: 80%;
   max-width: 450px;
   background-color: rgb(82 88 95);
   border-radius: 14px;
@@ -118,8 +118,12 @@ form {
 }
 
 @media screen and (max-width: 420px) {
-  .card {
+  .card-game {
     height:100vw;
+  }
+
+  .card {
+    height: 120vw;
   }
 
   .card-game span {
