@@ -134,9 +134,14 @@ form {
   } 
 }
 
-@media screen and (max-height: 455px) {
+@media screen and (max-height: 490px) {
   .container {
     justify-content: flex-start;
+  }
+
+  .card {
+    position: absolute;
+    top: 20px;
   }
 }
 
