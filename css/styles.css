@@ -1,0 +1,143 @@
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  font-family: 'Righteous', sans-serif;
+  font-size: 18px;
+}
+
+html, body {
+  width: 100%;
+  height: 100%;
+}
+
+.container {
+  width: 100%;
+  height: 100%;
+  background-color: #191d21;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  width: 70%;
+  height: 80%;
+  max-width: 450px;
+  background-color: rgb(82 88 95);
+  border-radius: 14px;
+  padding: 3%;
+}
+
+.header {
+  display: flex;
+  width: 100%;
+  margin-bottom: 5%;
+  align-items: center;
+}
+
+.header h1 {
+  font-size: 2rem;
+  padding-left: 1rem;
+  color: rgb(8 8 8);
+  letter-spacing: 2px;
+}
+
+.form-container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  padding: 2%;
+}
+
+.form-container label {
+  margin: 0 auto;
+  font-size: 1.2rem;
+  margin-bottom: 8px;
+}
+
+.form-container input {
+  width: 100%;
+  height: 50px;
+  padding: 15px;
+  border-radius: 14px;
+  border: none;
+  outline: none;
+  transition: all .3s ease;
+}
+
+.form-container input:focus {
+  box-shadow: 5px 5px 15px 3px #222;
+  transition: all .3s ease;
+}
+
+form {
+  margin-bottom: 15%;
+}
+
+.start-game {
+  width: 100%;
+  max-width: 70%;
+  margin: 0 auto;
+  height: 2.5rem;
+  border-radius: 10px;
+  border: none;
+  outline: none;
+  background-color: #232020;
+  color: #d6cec1;
+}
+
+.card-game {
+  height: 70%;
+  max-width: 400px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  transition: all 1s ease-in-out;
+  transform: rotate(45deg);
+  right: -1000px;
+}
+
+.card-game.active {
+  transform: rotate(0deg);
+  right: 50%;
+  transition: all 1s ease-in-out;
+}
+
+.card-game span {
+  text-align: center;
+  font-size: 14vmin;
+  font-family: 'El Messiri', sans-serif;
+  letter-spacing: -1px;
+}
+
+@media screen and (max-width: 420px) {
+  .card-game {
+    height:100vw;
+  }
+
+  .card-game span {
+    font-size: 15vw;
+  } 
+}
+
+.play-again {
+  position: absolute;
+  bottom: 0;
+  margin-bottom: 3vh;
+  background-color: #0b5aaf;
+  border: none;
+  outline: none;
+  width: 16%;
+  min-width: 140px;
+  height: 7%;
+  border-radius: 6px;
+  color: #b6cec1;
+  z-index: 111;
+}
