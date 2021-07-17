@@ -1,11 +1,7 @@
 // Get Data
 
 const fetchJson = async () => {
-  const res = await fetch('package.json', {
-    headers: {
-      'permissions-policy': 'interest-cohort=()'
-    }
-  });
+  const res = await fetch('src/package.json');
   const data = await res.json()
 
   return data;
