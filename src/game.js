@@ -60,7 +60,10 @@ const generateSpies = () => {
 
 
 const eventListeners = () => {
-  document.addEventListener('DOMContentLoaded', () => createDivs(parseInt(inputData.players)));
+  document.addEventListener('DOMContentLoaded', () => {
+    createDivs(parseInt(inputData.players));
+    document.querySelector('.container').style.overflow = 'hidden';
+  });
   
   let id = 0;
   document.querySelector('.container').addEventListener('click', e => {
