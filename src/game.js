@@ -12,6 +12,12 @@ const createDivs = numPlayers => {
               </span>
             </div>`;
   }
+  html += `<div class="card card-game" id="${numPlayers}">
+              <span class="game-info">
+                ابدأو اللعب
+              </span>
+            </div>`;
+
   document.querySelector('.container').innerHTML += html;
 
   generatePlayers(randomPlace());
@@ -65,7 +71,7 @@ const eventListeners = () => {
           if (card[id].offsetLeft > 1000) {
             card[id].classList.add('active');
             card[id].style.marginRight = `${-card[id].clientWidth / 2}px`
-          } else if (card[id].classList.contains('active')) {
+          } else if (card[id].classList.contains('active') && id != parseInt(inputData.players)) {
             card[id].style.marginRight = 0;
             card[id].classList.remove('active');
             card[id].style.right = '2000px';
