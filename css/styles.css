@@ -118,7 +118,7 @@ form {
 }
 
 @media screen and (max-width: 420px) {
-  .card-game {
+  .card {
     height:100vw;
   }
 
