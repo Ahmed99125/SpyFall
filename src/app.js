@@ -26,7 +26,7 @@ let numPlayers = document.getElementById('players'),
 numSpies = document.getElementById('spies');
 
 const redirect = () => {
-  if (numPlayers.value == '' || numSpies.value == '' || numPlayers <= numSpies.value) {
+  if (numPlayers.value == '' || numSpies.value == '' || numPlayers.value <= numSpies.value || numPlayers.value <= 1  || numSpies.value == 0) {
     alert('Enter Valin Input');
   } else {
     window.location.replace('game.html');
