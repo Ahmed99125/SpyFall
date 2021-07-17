@@ -1,7 +1,7 @@
 // Get Data
 
 const fetchJson = async () => {
-  const res = await fetch('../package.json');
+  const res = await fetch('https://github.com/Ahmed99125/SpyFall/blob/master/package.json');
   const data = await res.json()
 
   return data;
