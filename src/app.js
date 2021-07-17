@@ -1,7 +1,7 @@
 // Get Data
 
 const fetchJson = async () => {
-  const res = await fetch('../package.json');
+  const res = await fetch('package.json');
   const data = await res.json()
 
   return data;
