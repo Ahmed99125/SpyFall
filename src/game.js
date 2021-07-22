@@ -1,7 +1,7 @@
 const playAgainBtn = document.querySelector('.play-again'),
   inputData = JSON.parse(localStorage.getItem('input')),
   gameData = JSON.parse(localStorage.getItem('data')),
-  playersId = [];
+  playersId = [], lastSpy = [], lastPlace = [];
   
 const createDivs = numPlayers => {
   let html = '';
@@ -25,19 +25,36 @@ const createDivs = numPlayers => {
 }
 
 const randomPlace = () => {
-  const randNum = Math.floor(Math.random() * (gameData.place.length - 0) + 0),
-    curPlace = gameData.place[randNum];
-  return curPlace;
+  const randNum = Math.floor(Math.random() * (gameData.place.length - 0) + 0);
+
+  if (!lastPlace.includes(randNum)) {
+    const curPlace = gameData.place[randNum];
+    lastPlace.push(randNum);
+
+    return curPlace;
+  } else {
+    randomPlace();
+  }
+
+  if (lastPlace.length > 10) {
+    lastPlace = [];
+  }
 }
 
 
-const generatePlayers = (curPlace) => {
+const generatePlayers = curPlace => {
   const range = parseInt(inputData.players) - parseInt(inputData.spies),
     card = document.querySelectorAll('.card-game'),
     doneArr = [];
   let randId;
 
   for (let i = 0; i < range; i++) {
+    // for (let i = 0; i < lastSpy.length; i++) {
+    //   card[lastSpy[i]].firstElementChild.textContent = curPlace;
+
+    //   doneArr.push(lastSpy[i]);
+    // }
+
     do {
       randId = Math.floor(Math.random() * (parseInt(inputData.players) - 0) + 0);
     } while (doneArr.includes(randId));
@@ -54,6 +71,12 @@ const generateSpies = () => {
   for (let i = 0; i < parseInt(inputData.players); i++) {
     if (!playersId.includes(i)) {
       card[i].firstElementChild.textContent = gameData.spy;
+
+      // if (lastSpy.length > parseInt(inputData.players) - parseInt(inputData.spies)) {
+      //   lastSpy = [];
+      // } else {
+      //   lastSpy.push(i);
+      // }
     }
   }
 }
