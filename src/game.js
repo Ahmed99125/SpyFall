@@ -26,19 +26,20 @@ const createDivs = numPlayers => {
 
 const randomPlace = () => {
   const randNum = Math.floor(Math.random() * (gameData.place.length - 0) + 0);
+  let curPlace;
 
   if (!lastPlace.includes(randNum)) {
-    const curPlace = gameData.place[randNum];
+    curPlace = gameData.place[randNum];
     lastPlace.push(randNum);
-
-    return curPlace;
   } else {
     randomPlace();
   }
-
+  
   if (lastPlace.length > 10) {
     lastPlace = [];
   }
+
+  return curPlace;
 }
 
 
